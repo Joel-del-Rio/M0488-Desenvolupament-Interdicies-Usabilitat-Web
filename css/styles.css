@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6fb;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+a {
+  color: #1d4ed8;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  background: #111827;
+  color: #ffffff;
+  padding: 8px 12px;
+}
+
+.site-header,
+.site-footer {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  padding: 16px;
+}
+
+.header-content,
+.footer-content,
+.main-content {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.brand-title {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.top-nav,
+.sitemap {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.button,
+button {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
+  border-radius: 6px;
+  padding: 8px 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover,
+button:hover {
+  background-color: #1d4ed8;
+}
+
+main {
+  padding: 24px 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card,
+.detail-content,
+.detail-media,
+.form-section {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.card img,
+.detail-media img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.event-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+fieldset {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.helper-text {
+  color: #4b5563;
+  font-size: 0.92rem;
+  margin: 6px 0 0;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.alert {
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #7f1d1d;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+@media (min-width: 700px) {
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .top-nav {
+    margin-top: 0;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .event-detail-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

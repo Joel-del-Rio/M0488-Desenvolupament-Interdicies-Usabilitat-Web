@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | NeóArcade Events</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Salta al contingut principal</a>
+    <header class="site-header" aria-label="Capçalera principal">
+      <div class="header-content">
+        <p class="brand-title">NeóArcade Events</p>
+        <nav class="top-nav" aria-label="Navegació principal">
+          <a class="button" href="index.html">Inici</a>
+          <a class="button" href="register.html">Registre</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="main-content" aria-label="Inici de sessió">
+      <section class="form-section" aria-labelledby="login-title">
+        <h1 id="login-title">Accedeix al teu compte</h1>
+        <p>Introdueix les teves credencials per gestionar els teus esdeveniments de videojocs.</p>
+        <p id="login-error" class="alert" role="alert" hidden>Hi ha errors al formulari. Revisa els camps obligatoris.</p>
+
+        <form action="#" method="post" novalidate>
+          <div>
+            <label for="login-email">Correu electrònic</label>
+            <input id="login-email" name="email" type="email" required aria-required="true" aria-describedby="login-email-help" autocomplete="email" />
+            <p id="login-email-help" class="helper-text">Exemple: jugador@neonarcade.cat</p>
+          </div>
+
+          <div>
+            <label for="login-password">Contrasenya</label>
+            <input id="login-password" name="password" type="password" required aria-required="true" aria-describedby="login-password-help" autocomplete="current-password" minlength="8" />
+            <p id="login-password-help" class="helper-text">Mínim 8 caràcters.</p>
+          </div>
+
+          <button type="submit">Entrar a la plataforma</button>
+        </form>
+
+        <p>Encara no tens compte? <a href="register.html">Crea'l aquí</a>.</p>
+      </section>
+    </main>
+  </body>
+</html>

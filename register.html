@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registre | NeóArcade Events</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Salta al contingut principal</a>
+    <header class="site-header" aria-label="Capçalera principal">
+      <div class="header-content">
+        <p class="brand-title">NeóArcade Events</p>
+        <nav class="top-nav" aria-label="Navegació principal">
+          <a class="button" href="index.html">Inici</a>
+          <a class="button" href="login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="main-content" aria-label="Registre de compte">
+      <section class="form-section" aria-labelledby="register-title">
+        <h1 id="register-title">Crea el teu compte gamer</h1>
+        <p id="register-status" class="helper-text" aria-live="polite">La contrasenya ha de combinar majúscules, minúscules i números.</p>
+
+        <form action="#" method="post" novalidate>
+          <fieldset>
+            <legend>Dades personals</legend>
+
+            <div>
+              <label for="reg-username">Nom d'usuari</label>
+              <input id="reg-username" name="username" type="text" required aria-required="true" aria-describedby="reg-username-help" autocomplete="username" />
+              <p id="reg-username-help" class="helper-text">Nom públic dins la comunitat.</p>
+            </div>
+
+            <div>
+              <label for="reg-email">Correu electrònic</label>
+              <input id="reg-email" name="email" type="email" required aria-required="true" aria-describedby="reg-email-help" autocomplete="email" />
+              <p id="reg-email-help" class="helper-text">Rebràs confirmacions d'esdeveniments aquí.</p>
+            </div>
+
+            <div>
+              <label for="reg-password">Contrasenya</label>
+              <input id="reg-password" name="password" type="password" required aria-required="true" aria-describedby="reg-password-help register-status" autocomplete="new-password" minlength="8" />
+              <p id="reg-password-help" class="helper-text">Mínim 8 caràcters amb almenys un número.</p>
+            </div>
+
+            <div>
+              <label for="reg-confirm">Confirma la contrasenya</label>
+              <input id="reg-confirm" name="confirm_password" type="password" required aria-required="true" aria-describedby="reg-confirm-help" autocomplete="new-password" minlength="8" />
+              <p id="reg-confirm-help" class="helper-text">Repeteix la contrasenya exactament.</p>
+            </div>
+
+            <div>
+              <label for="reg-dob">Data de naixement</label>
+              <input id="reg-dob" name="dob" type="date" required aria-required="true" aria-describedby="reg-dob-help" />
+              <p id="reg-dob-help" class="helper-text">Cal tenir 16 anys o més per participar en tornejos competitius.</p>
+            </div>
+          </fieldset>
+
+          <button type="submit">Completa el registre</button>
+        </form>
+
+        <p>Ja tens compte? <a href="login.html">Inicia sessió</a>.</p>
+      </section>
+    </main>
+
+  </body>
+</html>

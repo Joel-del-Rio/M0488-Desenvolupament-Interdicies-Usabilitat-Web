@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear esdeveniment | NeóArcade Events</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Salta al contingut principal</a>
+    <header class="site-header" aria-label="Capçalera principal">
+      <div class="header-content">
+        <p class="brand-title">NeóArcade Events</p>
+        <nav class="top-nav" aria-label="Navegació principal">
+          <a class="button" href="index.html">Inici</a>
+          <a class="button" href="profile.html">Perfil</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="main-content" aria-label="Crear un esdeveniment">
+      <section class="form-section" aria-labelledby="create-title">
+        <h1 id="create-title">Crear un nou esdeveniment</h1>
+
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Informació principal de l'esdeveniment</legend>
+
+            <div>
+              <label for="event-title">Títol de l'esdeveniment</label>
+              <input id="event-title" name="title" type="text" required aria-required="true" aria-describedby="event-title-help" />
+              <p id="event-title-help" class="helper-text">Exemple: Torneig Open Valorant Barcelona.</p>
+            </div>
+
+            <div>
+              <label for="event-description">Descripció</label>
+              <textarea id="event-description" name="description" rows="6" required aria-required="true" aria-describedby="event-description-help"></textarea>
+              <p id="event-description-help" class="helper-text">Inclou format, públic objectiu i premis.</p>
+            </div>
+
+            <div>
+              <label for="event-date">Data</label>
+              <input id="event-date" name="date" type="date" required aria-required="true" aria-describedby="event-date-help" />
+              <p id="event-date-help" class="helper-text">Data prevista de celebració.</p>
+            </div>
+
+            <div>
+              <label for="event-location">Localització</label>
+              <input id="event-location" name="location" type="text" required aria-required="true" aria-describedby="event-location-help" />
+              <p id="event-location-help" class="helper-text">Ciutat, recinte o enllaç de l'espai virtual.</p>
+            </div>
+
+            <div>
+              <label for="event-category">Categoria</label>
+              <select id="event-category" name="category" required aria-required="true" aria-describedby="event-category-help">
+                <option value="">Selecciona una categoria</option>
+                <option value="esports">eSports</option>
+                <option value="launch">Llançament</option>
+                <option value="conference">Convenció</option>
+                <option value="retro">Retro</option>
+                <option value="training">Formació</option>
+              </select>
+              <p id="event-category-help" class="helper-text">Escull la tipologia principal de l'activitat.</p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Recursos multimèdia</legend>
+
+            <div>
+              <label for="event-image">Imatge de portada</label>
+              <input id="event-image" name="image" type="file" accept="image/*" aria-describedby="event-image-help" />
+              <p id="event-image-help" class="helper-text">Carrega una imatge amb bona qualitat i text alternatiu al publicar.</p>
+            </div>
+
+            <div>
+              <label for="event-video">URL del vídeo promocional</label>
+              <input id="event-video" name="video_url" type="url" aria-describedby="event-video-help" placeholder="https://" />
+              <p id="event-video-help" class="helper-text">Afegeix un enllaç de YouTube, Vimeo o fitxer MP4.</p>
+            </div>
+          </fieldset>
+
+          <button type="submit">Publica esdeveniment</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
