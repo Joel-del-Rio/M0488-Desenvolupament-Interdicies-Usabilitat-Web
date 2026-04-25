@@ -1,74 +1,115 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detall | Barcelona Esports Cup</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    
+    .event-detail-layout {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 40px;
+        margin-top: 20px;
+    }
+    .detail-media img, .detail-media video {
+        border: 2px solid var(--primary-neon);
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+    }
+    .detail-media h2 {
+        color: var(--primary-neon);
+        font-size: 1.2rem;
+        margin: 15px 0 10px 0;
+    }
+    audio {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .transcription-box {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        border-left: 3px solid var(--secondary-neon);
+    }
+    @media (max-width: 900px) {
+        .event-detail-layout { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
   <a href="#main-content" class="skip-link">Salta al contingut principal</a>
+  
   <header class="site-header" aria-label="Capçalera principal">
     <div class="header-content">
-      <p class="brand-title">NeóArcade Events</p>
+      <h1 class="brand-title"><a href="index.html" style="text-decoration: none; color: inherit;">NeóArcade Events</a></h1>
       <nav class="top-nav" aria-label="Navegació principal">
-        <a class="button" href="index.html">Inici</a>
-        <a class="button" href="login.html">Login</a>
-        <a class="button" href="register.html">Registre</a>
+        <ul class="nav-list" style="list-style: none; display: flex; gap: 10px;">
+          <li><a class="button" href="index.html">Inici</a></li>
+          <li><a class="button" href="login.html">Login</a></li>
+          <li><a class="button" href="register.html">Registre</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main id="main-content" class="main-content" aria-label="Detall de l'esdeveniment">
-    <section class="event-detail-layout" aria-labelledby="event-title">
+  <main id="main-content" class="main-content">
+    <div class="event-detail-layout">
       <article class="detail-content">
-        <h1 id="event-title">Torneig de League of Legends — Barcelona Esports Cup</h1>
-        <p>La Barcelona Esports Cup reuneix 16 equips de l'escena competitiva catalana i estatal en un format de fase de
-          grups i eliminatòries. L'esdeveniment ofereix retransmissió en directe amb comentaris accessibles,
-          interpretació en llengua de signes i espais adaptats per a públic amb mobilitat reduïda.</p>
-        <p>A més de la competició principal, el recinte inclou tallers d'estratègia, zona de signatures amb creadors de
-          contingut i estands de hardware gaming. La final presencial es disputarà davant de 2.000 assistents.</p>
-        <p><strong>Data oficial:</strong> <time datetime="2026-06-13">13 de juny de 2026</time></p>
-        <p><a href="index.html">← Torna a la pàgina principal</a></p>
+        <h1 id="event-title" style="color: var(--secondary-neon); margin-bottom: 20px;">Torneig de League of Legends — Barcelona Esports Cup</h1>
+        
+        <div class="event-date" style="margin-bottom: 20px;">
+            <strong>Data oficial:</strong> <time datetime="2026-06-13">13 de juny de 2026</time>
+        </div>
+
+        <p style="margin-bottom: 15px;">La Barcelona Esports Cup reuneix 16 equips de l'escena competitiva catalana i estatal en un format de fase de grups i eliminatòries. L'esdeveniment ofereix retransmissió en directe amb comentaris accessibles, interpretació en llengua de signes i espais adaptats.</p>
+        
+        <p style="margin-bottom: 15px;">A més de la competició principal, el recinte inclou tallers d'estratègia, zona de signatures amb creadors de contingut i estands de hardware gaming. La final presencial es disputarà davant de 2.000 assistents.</p>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="button" style="border-color: var(--text-muted); color: var(--text-muted);">← Torna al llistat</a>
+            <a href="#" class="button" style="margin-left: 10px; background: var(--primary-neon); color: black;">Inscriure'm ara</a>
+        </div>
       </article>
 
-      <aside class="detail-media" aria-label="Contingut multimèdia de l'esdeveniment">
-        <img src="Imagenes/TorneoLOL.jpg"
-          alt="Escenari professional de League of Legends amb dos equips preparats per jugar" />
+      <aside class="detail-media" aria-label="Contingut multimèdia">
+        <img src="Imagenes/TorneoLOL.jpg" alt="Escenari professional de League of Legends amb equips jugant" style="width: 100%;" />
+        
         <h2>Vídeo promocional</h2>
-        <video controls width="100%" aria-label="Vídeo promocional del torneig Barcelona Esports Cup">
+        <video controls width="100%">
           <source src="Video/LOL_Liga.mp4" type="video/mp4" />
           El teu navegador no suporta vídeo HTML5.
         </video>
 
-        <h2>Àudio entrevista als organitzadors</h2>
-        <audio controls aria-label="Àudio sobre els objectius del torneig">
+        <h2>Entrevista organitzadors (Àudio)</h2>
+        <audio controls>
           <source src="Audios/AudioLOL.mp3" type="audio/mpeg" />
           El teu navegador no suporta l'element d'àudio.
         </audio>
-        <p><a href="#" aria-label="Obre la transcripció de l'àudio del torneig">Transcripció de l'àudio</a>
-        </p>
-        <p>Este video es un resumen de la final celebrada en Torrevieja, donde el FC Barcelona Esports se coronó campeón
-          por primera vez. Tras una serie intensa contra Giants, el Barça logró remontar partidas clave gracias a las
-          actuaciones destacadas de jugadores como Legolas y Tiger. El video muestra los momentos más emocionantes de
-          las jugadas, la victoria final por 3-1 y el momento en que el equipo levanta el trofeo de la Superliga.</p>
-
-
+        
+        <div class="transcription-box">
+            <strong>Transcripció:</strong>
+            <p>Resum de la final de Torrevieja: El FC Barcelona Esports es corona campió contra Giants (3-1). Actuacions clau de Legolas i Tiger.</p>
+        </div>
       </aside>
-    </section>
+    </div>
   </main>
 
-  <footer class="site-footer" aria-label="Peu de pàgina">
+  <footer class="site-footer">
     <div class="footer-content">
-      <nav class="sitemap" aria-label="Sitemap">
-        <a href="index.html">Inici</a>
-        <a href="event-detail-2.html">Següent esdeveniment</a>
-        <a href="create-event.html">Crear esdeveniment</a>
+      <nav class="sitemap">
+        <ul style="list-style: none; display: flex; gap: 20px; justify-content: center;">
+          <li><a href="index.html">Inici</a></li>
+          <li><a href="event-detail-2.html">Següent</a></li>
+          <li><a href="create-event.html">Crear Esdeveniment</a></li>
+        </ul>
       </nav>
+      <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted);">© 2026 NeóArcade Events - Projecte d'Usabilitat</p>
     </div>
   </footer>
 </body>
-
 </html>

@@ -1,47 +1,132 @@
 <!DOCTYPE html>
 <html lang="ca">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login | NeóArcade Events</title>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <a href="#main-content" class="skip-link">Salta al contingut principal</a>
-    <header class="site-header" aria-label="Capçalera principal">
-      <div class="header-content">
-        <p class="brand-title">NeóArcade Events</p>
-        <nav class="top-nav" aria-label="Navegació principal">
-          <a class="button" href="index.html">Inici</a>
-          <a class="button" href="register.html">Registre</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | NeóArcade Events</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+
+    .login-container {
+        max-width: 450px;
+        margin: 40px auto;
+        background: var(--card-bg);
+        padding: 40px;
+        border-radius: 12px;
+        border: 1px solid var(--primary-neon);
+        box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+    }
+    .login-container h1 {
+        color: var(--primary-neon);
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    .login-container p {
+        text-align: center;
+        margin-bottom: 25px;
+        color: var(--text-muted);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text-light);
+        font-weight: bold;
+    }
+    input[type="email"], input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        background: #0d0d12;
+        border: 1px solid #333;
+        color: white;
+        border-radius: 4px;
+        transition: var(--transition);
+    }
+    input:focus {
+        border-color: var(--secondary-neon);
+        outline: none;
+        box-shadow: 0 0 8px var(--secondary-neon);
+    }
+    .btn-login {
+        width: 100%;
+        background: var(--primary-neon);
+        color: black;
+        padding: 15px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .helper-text {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 5px;
+    }
+    .alert {
+        background: rgba(255, 77, 77, 0.1);
+        color: var(--error-red);
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid var(--error-red);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Salta al contingut principal</a>
+  
+  <header class="site-header" aria-label="Capçalera principal">
+    <div class="header-content">
+      <h1 class="brand-title"><a href="index.html" style="text-decoration: none; color: inherit;">NeóArcade Events</a></h1>
+      <nav class="top-nav" aria-label="Navegació principal">
+        <ul class="nav-list" style="list-style: none; display: flex; gap: 10px;">
+          <li><a class="button" href="index.html">Inici</a></li>
+          <li><a class="button active" href="login.html">Login</a></li>
+          <li><a class="button" href="register.html">Registre</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    <section class="login-container">
+      <h1 id="login-title">Accés Usuari</h1>
+      <p>Benvingut de nou, jugador.</p>
+
+      <div id="login-error" class="alert" role="alert" hidden>
+        Credencials incorrectes. Torna-ho a intentar.
       </div>
-    </header>
 
-    <main id="main-content" class="main-content" aria-label="Inici de sessió">
-      <section class="form-section" aria-labelledby="login-title">
-        <h1 id="login-title">Accedeix al teu compte</h1>
-        <p>Introdueix les teves credencials per gestionar els teus esdeveniments de videojocs.</p>
-        <p id="login-error" class="alert" role="alert" hidden>Hi ha errors al formulari. Revisa els camps obligatoris.</p>
+      <form action="profile.html" method="POST">
+        <div class="form-group">
+          <label for="login-email">Correu electrònic</label>
+          <input id="login-email" name="email" type="email" required placeholder="Ex: jugador@neonarcade.cat" autocomplete="email" />
+          <p class="helper-text">Utilitza el correu amb el que te vas registrar.</p>
+        </div>
 
-        <form action="#" method="post" novalidate>
-          <div>
-            <label for="login-email">Correu electrònic</label>
-            <input id="login-email" name="email" type="email" required aria-required="true" aria-describedby="login-email-help" autocomplete="email" />
-            <p id="login-email-help" class="helper-text">Exemple: jugador@neonarcade.cat</p>
-          </div>
+        <div class="form-group">
+          <label for="login-password">Contrasenya</label>
+          <input id="login-password" name="password" type="password" required minlength="8" autocomplete="current-password" />
+          <p class="helper-text">Mínim 8 caràcters.</p>
+        </div>
 
-          <div>
-            <label for="login-password">Contrasenya</label>
-            <input id="login-password" name="password" type="password" required aria-required="true" aria-describedby="login-password-help" autocomplete="current-password" minlength="8" />
-            <p id="login-password-help" class="helper-text">Mínim 8 caràcters.</p>
-          </div>
+        <button type="submit" class="button btn-login">Entrar a la plataforma</button>
+      </form>
 
-          <button type="submit">Entrar a la plataforma</button>
-        </form>
+      <p style="margin-top: 25px; font-size: 0.9rem;">
+        Encara no tens compte? <a href="register.html" style="color: var(--secondary-neon); text-decoration: none;">Crea'l aquí</a>.
+      </p>
+    </section>
+  </main>
 
-        <p>Encara no tens compte? <a href="register.html">Crea'l aquí</a>.</p>
-      </section>
-    </main>
-  </body>
+  <footer class="site-footer">
+    <div class="footer-content">
+        <p style="font-size: 0.8rem; color: var(--text-muted);">© 2026 NeóArcade Events - Seguretat i Usabilitat</p>
+    </div>
+  </footer>
+</body>
 </html>

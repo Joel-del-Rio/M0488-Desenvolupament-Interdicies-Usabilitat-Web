@@ -1,79 +1,90 @@
 <!DOCTYPE html>
 <html lang="ca">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil | NeóArcade Events</title>
     <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
+</head>
+<body>
     <a href="#main-content" class="skip-link">Salta al contingut principal</a>
+    
     <header class="site-header" aria-label="Capçalera principal">
       <div class="header-content">
-        <p class="brand-title">NeóArcade Events</p>
+        <h1 class="brand-title"><a href="index.html" style="text-decoration: none; color: inherit;">NeóArcade Events</a></h1>
         <nav class="top-nav" aria-label="Navegació principal">
-          <a class="button" href="index.html">Inici</a>
-          <a class="button" href="create-event.html">Crear esdeveniment</a>
+          <ul class="nav-list" style="list-style: none; display: flex; gap: 15px;">
+            <li><a class="button" href="index.html">Inici</a></li>
+            <li><a class="button active" href="profile.html">Perfil</a></li>
+            <li><a class="button" href="create-event.html">Crear esdeveniment</a></li>
+          </ul>
         </nav>
       </div>
     </header>
 
-    <main id="main-content" class="main-content" aria-label="Edició de perfil">
-      <section class="form-section" aria-labelledby="profile-title">
-        <h1 id="profile-title">Modificar perfil</h1>
+    <main id="main-content" class="main-content">
+      <section class="form-section">
+        <header class="section-header">
+            <h2 id="profile-title">Modificar el teu perfil</h2>
+            <p>Personalitza la teva identitat a la plataforma.</p>
+        </header>
 
-        <form action="#" method="post">
+        <form action="index.html" method="post" style="max-width: 800px; margin: 0 auto;">
           <fieldset>
             <legend>Informació bàsica</legend>
 
-            <div>
+            <div class="form-group">
               <label for="profile-username">Nom d'usuari</label>
-              <input id="profile-username" name="username" type="text" required aria-required="true" aria-describedby="profile-username-help" value="PixelNinjaCAT" />
-              <p id="profile-username-help" class="helper-text">Nom visible en comentaris i classificacions.</p>
+              <input id="profile-username" name="username" type="text" required value="PixelNinjaCAT" />
+              <p class="helper-text">Nom visible en comentaris i classificacions.</p>
             </div>
 
-            <div>
+            <div class="form-group">
               <label for="profile-email">Correu electrònic</label>
-              <input id="profile-email" name="email" type="email" required aria-required="true" aria-describedby="profile-email-help" value="pixelninja@neonarcade.cat" />
-              <p id="profile-email-help" class="helper-text">S'utilitza per avisos i recordatoris.</p>
+              <input id="profile-email" name="email" type="email" required value="pixelninja@neonarcade.cat" />
+              <p class="helper-text">S'utilitza per a avisos i recordatoris.</p>
             </div>
 
-            <div>
+            <div class="form-group">
               <label for="profile-bio">Biografia</label>
-              <textarea id="profile-bio" name="bio" rows="5" aria-describedby="profile-bio-help">Jugador competitiu de MOBA i amant dels jocs indie narratius.</textarea>
-              <p id="profile-bio-help" class="helper-text">Descriu la teva experiència gamer en 2-3 frases.</p>
+              <textarea id="profile-bio" name="bio" rows="5">Jugador competitiu de MOBA i amant dels jocs indie narratius.</textarea>
+              <p class="helper-text">Descriu la teva experiència gamer en 2-3 frases.</p>
             </div>
           </fieldset>
 
           <fieldset>
             <legend>Preferències i avatar</legend>
 
-            <div>
-              <label for="profile-avatar">Puja un avatar</label>
-              <input id="profile-avatar" name="avatar" type="file" accept="image/*" aria-describedby="profile-avatar-help" />
-              <p id="profile-avatar-help" class="helper-text">Formats recomanats: JPG o PNG.</p>
+            <div class="form-group">
+              <label for="profile-avatar">Avatar de jugador</label>
+              <input id="profile-avatar" name="avatar" type="file" accept="image/*" />
             </div>
 
-            <div>
+            <div class="form-group">
               <label for="profile-genre">Gènere preferit</label>
-              <select id="profile-genre" name="genre" aria-describedby="profile-genre-help">
+              <select id="profile-genre" name="genre">
                 <option value="">Selecciona una opció</option>
-                <option value="moba">MOBA</option>
+                <option value="moba" selected>MOBA</option>
                 <option value="fps">FPS</option>
                 <option value="rpg">RPG</option>
                 <option value="indie">Indie</option>
                 <option value="retro">Retro</option>
               </select>
-              <p id="profile-genre-help" class="helper-text">Ens ajuda a recomanar-te esdeveniments.</p>
             </div>
           </fieldset>
 
-          <div class="form-actions">
-            <button type="button" aria-label="Cancel·la l'edició del perfil">Cancel·lar</button>
-            <button type="submit" aria-label="Desa els canvis del perfil">Desar canvis</button>
+          <div class="form-actions" style="display: flex; gap: 15px; margin-top: 20px;">
+            <button type="submit" class="button" style="background: var(--primary-neon); color: black; flex: 1;">Desar canvis</button>
+            <a href="index.html" class="button" style="border-color: var(--text-muted); color: var(--text-muted); text-align: center; flex: 1;">Cancel·lar</a>
           </div>
         </form>
       </section>
     </main>
-  </body>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2026 NeóArcade Events | Configuració de compte</p>
+        </div>
+    </footer>
+</body>
 </html>

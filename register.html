@@ -1,69 +1,82 @@
 <!DOCTYPE html>
 <html lang="ca">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registre | NeóArcade Events</title>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <a href="#main-content" class="skip-link">Salta al contingut principal</a>
-    <header class="site-header" aria-label="Capçalera principal">
-      <div class="header-content">
-        <p class="brand-title">NeóArcade Events</p>
-        <nav class="top-nav" aria-label="Navegació principal">
-          <a class="button" href="index.html">Inici</a>
-          <a class="button" href="login.html">Login</a>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registre | NeóArcade Events</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Salta al contingut principal</a>
+  
+  <header class="site-header" aria-label="Capçalera principal">
+    <div class="header-content">
+      <h1 class="brand-title"><a href="index.html" style="text-decoration: none; color: inherit;">NeóArcade Events</a></h1>
+      <nav class="top-nav" aria-label="Navegació principal">
+        <ul class="nav-list" style="list-style: none; display: flex; gap: 15px;">
+          <li><a class="button" href="index.html">Inici</a></li>
+          <li><a class="button" href="login.html">Login</a></li>
+          <li><a class="button active" href="register.html">Registre</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main id="main-content" class="main-content" aria-label="Registre de compte">
-      <section class="form-section" aria-labelledby="register-title">
+  <main id="main-content" class="main-content">
+    <section class="form-section">
+      <header class="section-header">
         <h1 id="register-title">Crea el teu compte gamer</h1>
-        <p id="register-status" class="helper-text" aria-live="polite">La contrasenya ha de combinar majúscules, minúscules i números.</p>
+        <p>Uneix-te a la comunitat i participa en els millors esdeveniments.</p>
+      </header>
 
-        <form action="#" method="post" novalidate>
-          <fieldset>
-            <legend>Dades personals</legend>
+      <form action="profile.html" method="post" style="max-width: 600px; margin: 0 auto;">
+        <fieldset>
+          <legend>Dades personals</legend>
 
-            <div>
-              <label for="reg-username">Nom d'usuari</label>
-              <input id="reg-username" name="username" type="text" required aria-required="true" aria-describedby="reg-username-help" autocomplete="username" />
-              <p id="reg-username-help" class="helper-text">Nom públic dins la comunitat.</p>
-            </div>
+          <div class="form-group">
+            <label for="reg-username">Nom d'usuari</label>
+            <input id="reg-username" name="username" type="text" required placeholder="Ex: PixelNinja" autocomplete="username" />
+            <p class="helper-text">Aquest serà el teu nom públic a la comunitat.</p>
+          </div>
 
-            <div>
-              <label for="reg-email">Correu electrònic</label>
-              <input id="reg-email" name="email" type="email" required aria-required="true" aria-describedby="reg-email-help" autocomplete="email" />
-              <p id="reg-email-help" class="helper-text">Rebràs confirmacions d'esdeveniments aquí.</p>
-            </div>
+          <div class="form-group">
+            <label for="reg-email">Correu electrònic</label>
+            <input id="reg-email" name="email" type="email" required placeholder="jugador@exemple.cat" autocomplete="email" />
+            <p class="helper-text">Rebràs les confirmacions d'esdeveniments aquí.</p>
+          </div>
 
-            <div>
-              <label for="reg-password">Contrasenya</label>
-              <input id="reg-password" name="password" type="password" required aria-required="true" aria-describedby="reg-password-help register-status" autocomplete="new-password" minlength="8" />
-              <p id="reg-password-help" class="helper-text">Mínim 8 caràcters amb almenys un número.</p>
-            </div>
+          <div class="form-group">
+            <label for="reg-password">Contrasenya</label>
+            <input id="reg-password" name="password" type="password" required minlength="8" autocomplete="new-password" />
+            <p class="helper-text">Mínim 8 caràcters (majúscules, minúscules i números).</p>
+          </div>
 
-            <div>
-              <label for="reg-confirm">Confirma la contrasenya</label>
-              <input id="reg-confirm" name="confirm_password" type="password" required aria-required="true" aria-describedby="reg-confirm-help" autocomplete="new-password" minlength="8" />
-              <p id="reg-confirm-help" class="helper-text">Repeteix la contrasenya exactament.</p>
-            </div>
+          <div class="form-group">
+            <label for="reg-confirm">Confirma la contrasenya</label>
+            <input id="reg-confirm" name="confirm_password" type="password" required minlength="8" autocomplete="new-password" />
+          </div>
 
-            <div>
-              <label for="reg-dob">Data de naixement</label>
-              <input id="reg-dob" name="dob" type="date" required aria-required="true" aria-describedby="reg-dob-help" />
-              <p id="reg-dob-help" class="helper-text">Cal tenir 16 anys o més per participar en tornejos competitius.</p>
-            </div>
-          </fieldset>
+          <div class="form-group">
+            <label for="reg-dob">Data de naixement</label>
+            <input id="reg-dob" name="dob" type="date" required />
+            <p class="helper-text">Cal ser major de 16 anys per a tornejos competitius.</p>
+          </div>
+        </fieldset>
 
-          <button type="submit">Completa el registre</button>
-        </form>
+        <div style="text-align: center; margin-top: 20px;">
+          <button type="submit" class="button" style="width: 100%; background: var(--primary-neon); color: black;">Completa el registre</button>
+          <p style="margin-top: 20px; font-size: 0.9rem;">
+            Ja tens compte? <a href="login.html" style="color: var(--secondary-neon); text-decoration: none;">Inicia sessió</a>.
+          </p>
+        </div>
+      </form>
+    </section>
+  </main>
 
-        <p>Ja tens compte? <a href="login.html">Inicia sessió</a>.</p>
-      </section>
-    </main>
-
-  </body>
+  <footer class="site-footer">
+    <div class="footer-content">
+        <p>© 2026 NeóArcade Events | Un nou nivell d'esdeveniments</p>
+    </div>
+  </footer>
+</body>
 </html>

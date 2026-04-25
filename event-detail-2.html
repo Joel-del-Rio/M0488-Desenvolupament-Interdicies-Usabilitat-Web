@@ -1,75 +1,116 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detall | Nova expansió de Minecraft</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+  
+    .event-detail-layout {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 40px;
+        margin-top: 20px;
+    }
+    .detail-media img, .detail-media video {
+        border: 2px solid var(--primary-neon);
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+    }
+    .detail-media h2 {
+        color: var(--primary-neon);
+        font-size: 1.2rem;
+        margin: 15px 0 10px 0;
+    }
+    audio {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .transcription-box {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        border-left: 3px solid var(--secondary-neon);
+        color: var(--text-muted);
+    }
+    @media (max-width: 900px) {
+        .event-detail-layout { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
   <a href="#main-content" class="skip-link">Salta al contingut principal</a>
+  
   <header class="site-header" aria-label="Capçalera principal">
     <div class="header-content">
-      <p class="brand-title">NeóArcade Events</p>
+      <h1 class="brand-title"><a href="index.html" style="text-decoration: none; color: inherit;">NeóArcade Events</a></h1>
       <nav class="top-nav" aria-label="Navegació principal">
-        <a class="button" href="index.html">Inici</a>
-        <a class="button" href="login.html">Login</a>
-        <a class="button" href="register.html">Registre</a>
+        <ul class="nav-list" style="list-style: none; display: flex; gap: 10px;">
+          <li><a class="button" href="index.html">Inici</a></li>
+          <li><a class="button" href="login.html">Login</a></li>
+          <li><a class="button" href="register.html">Registre</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main id="main-content" class="main-content" aria-label="Detall de l'esdeveniment">
-    <section class="event-detail-layout" aria-labelledby="event-title">
+  <main id="main-content" class="main-content">
+    <div class="event-detail-layout">
       <article class="detail-content">
-        <h1 id="event-title">Llançament: Nova expansió de Minecraft</h1>
-        <p>La comunitat de Minecraft es reunirà en una presentació immersiva de la nova expansió, amb noves mecàniques
-          de construcció cooperativa, biomes interactius i fauna dinàmica. L'acte inclou una demo jugable i un espai de
-          preguntes amb l'equip de desenvolupament.</p>
-        <p>Durant la jornada també es faran tallers de creació de mods, bones pràctiques d'accessibilitat en mons
-          sandbox i una competició creativa per equips escolars. L'esdeveniment està pensat per públic familiar i
-          jugadors veterans.</p>
-        <p><strong>Data oficial:</strong> <time datetime="2026-05-02">2 de maig de 2026</time></p>
-        <p><a href="index.html">← Torna a la pàgina principal</a></p>
+        <h1 id="event-title" style="color: var(--secondary-neon); margin-bottom: 20px;">Llançament: Nova expansió de Minecraft</h1>
+        
+        <div class="event-date" style="margin-bottom: 20px;">
+            <strong>Data oficial:</strong> <time datetime="2026-05-02">2 de maig de 2026</time>
+        </div>
+
+        <p style="margin-bottom: 15px;">La comunitat de Minecraft es reunirà en una presentació immersiva de la nova expansió, amb noves mecàniques de construcció cooperativa, biomes interactius i fauna dinàmica. L'acte inclou una demo jugable i un espai de preguntes amb l'equip de desenvolupament.</p>
+        
+        <p style="margin-bottom: 15px;">Durant la jornada també es faran tallers de creació de mods, bones pràctiques d'accessibilitat en mons sandbox i una competició creativa per equips escolars. L'esdeveniment està pensat per a públic familiar i jugadors veterans.</p>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="button" style="border-color: var(--text-muted); color: var(--text-muted);">← Torna al llistat</a>
+            <a href="#" class="button" style="margin-left: 10px; background: var(--primary-neon); color: black;">Reservar Demo</a>
+        </div>
       </article>
 
-      <aside class="detail-media" aria-label="Contingut multimèdia de l'esdeveniment">
-        <img src="Imagenes/Minecraft-Live-1.jpg"
-          alt="Escenari de presentació d'una expansió de Minecraft amb pantalles gegants" />
-        <h2>Vídeo de gameplay comentat</h2>
-        <video controls width="100%" aria-label="Vídeo de demostració de la nova expansió de Minecraft">
+      <aside class="detail-media" aria-label="Contingut multimèdia">
+        <img src="Imagenes/Minecraft-Live-1.jpg" alt="Escenari de Minecraft amb pantalles gegants" style="width: 100%;" />
+        
+        <h2>Gameplay comentat (Vídeo)</h2>
+        <video controls width="100%">
           <source src="Video/TodoNuevoMinecraft.mp4" type="video/mp4" />
           El teu navegador no suporta vídeo HTML5.
         </video>
 
-        <h2>Àudio resum de novetats</h2>
-        <audio controls aria-label="Àudio resum de les noves funcionalitats">
+        <h2>Resum de novetats (Àudio)</h2>
+        <audio controls>
           <source src="Audios/AudioMine.mp3" type="audio/mpeg" />
           El teu navegador no suporta l'element d'àudio.
         </audio>
-        <p><a href="#" aria-label="Obre la transcripció de l'àudio de la nova expansió">Transcripció del'àudio</a></p>
-        <p>
-          Este video detalla las grandes actualizaciones para 2026. Se anuncia el "Cute Drop" para el 24 de marzo, que
-          mejora a los animales bebé. También llega el "Caos Cúbico", un nuevo contenido para el subsuelo con las Cuevas
-          de Sulfuro, que incluyen lagos tóxicos y el Cubo de Sulfuro, un nuevo enemigo tipo slime que absorbe bloques.
-          Finalmente, se confirmó la apertura de un parque temático en Londres para 2027 y el desarrollo oficial de
-          Minecraft Dungeons 2.
-        </p>
+        
+        <div class="transcription-box">
+            <strong>Resum de la transcripció:</strong>
+            <p>Actualitzacions 2026: "Cute Drop" al març, noves "Cuevas de Sulfuro" amb enemics tipus slime i confirmació de Minecraft Dungeons 2.</p>
+        </div>
       </aside>
-    </section>
+    </div>
   </main>
 
-  <footer class="site-footer" aria-label="Peu de pàgina">
+  <footer class="site-footer">
     <div class="footer-content">
-      <nav class="sitemap" aria-label="Sitemap">
-        <a href="index.html">Inici</a>
-        <a href="event-detail-1.html">Esdeveniment anterior</a>
-        <a href="create-event.html">Crear esdeveniment</a>
+      <nav class="sitemap">
+        <ul style="list-style: none; display: flex; gap: 20px; justify-content: center;">
+          <li><a href="index.html">Inici</a></li>
+          <li><a href="event-detail-1.html">Anterior</a></li>
+          <li><a href="create-event.html">Crear Esdeveniment</a></li>
+        </ul>
       </nav>
+      <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted);">© 2026 NeóArcade Events - Pràctica d'Usabilitat</p>
     </div>
   </footer>
 </body>
-
 </html>

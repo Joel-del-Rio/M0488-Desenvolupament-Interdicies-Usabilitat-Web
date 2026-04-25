@@ -1,88 +1,154 @@
 <!DOCTYPE html>
 <html lang="ca">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crear esdeveniment | NeóArcade Events</title>
     <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
+    <style>
+       
+        fieldset {
+            border: 1px solid var(--primary-neon);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            background: rgba(26, 26, 36, 0.5);
+        }
+        legend {
+            color: var(--secondary-neon);
+            padding: 0 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .form-section div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--primary-neon);
+        }
+        input[type="text"], input[type="date"], input[type="url"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            background: #0d0d12;
+            border: 1px solid #333;
+            color: white;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus {
+            border-color: var(--secondary-neon);
+            outline: none;
+            box-shadow: 0 0 5px var(--secondary-neon);
+        }
+        .helper-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .submit-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .btn-submit {
+            background: var(--primary-neon);
+            color: black;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            width: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
     <a href="#main-content" class="skip-link">Salta al contingut principal</a>
+    
     <header class="site-header" aria-label="Capçalera principal">
       <div class="header-content">
-        <p class="brand-title">NeóArcade Events</p>
+        <h1 class="brand-title"><a href="index.html" style="text-decoration: none; color: inherit;">NeóArcade Events</a></h1>
         <nav class="top-nav" aria-label="Navegació principal">
-          <a class="button" href="index.html">Inici</a>
-          <a class="button" href="profile.html">Perfil</a>
+          <ul class="nav-list" style="list-style: none; display: flex; gap: 15px;">
+            <li><a class="button" href="index.html">Inici</a></li>
+            <li><a class="button" href="profile.html">Perfil</a></li>
+          </ul>
         </nav>
       </div>
     </header>
 
-    <main id="main-content" class="main-content" aria-label="Crear un esdeveniment">
-      <section class="form-section" aria-labelledby="create-title">
-        <h1 id="create-title">Crear un nou esdeveniment</h1>
+    <main id="main-content" class="main-content">
+      <section class="form-section">
+        <header class="section-header">
+            <h2 id="create-title">Crear un nou esdeveniment</h2>
+            <p>Omple les dades per fer créixer la comunitat.</p>
+        </header>
 
-        <form action="#" method="post">
+        <form action="index.html" method="post" style="max-width: 800px; margin: 0 auto;">
           <fieldset>
-            <legend>Informació principal de l'esdeveniment</legend>
+            <legend>Informació principal</legend>
 
             <div>
               <label for="event-title">Títol de l'esdeveniment</label>
-              <input id="event-title" name="title" type="text" required aria-required="true" aria-describedby="event-title-help" />
-              <p id="event-title-help" class="helper-text">Exemple: Torneig Open Valorant Barcelona.</p>
+              <input id="event-title" name="title" type="text" required placeholder="Ex: Torneig Open Valorant..." />
+              <p class="helper-text">Posa un nom atractiu que identifiqui ràpidament el joc.</p>
             </div>
 
             <div>
-              <label for="event-description">Descripció</label>
-              <textarea id="event-description" name="description" rows="6" required aria-required="true" aria-describedby="event-description-help"></textarea>
-              <p id="event-description-help" class="helper-text">Inclou format, públic objectiu i premis.</p>
+              <label for="event-description">Descripció detallada</label>
+              <textarea id="event-description" name="description" rows="5" required placeholder="Explica de què tracta l'esdeveniment..."></textarea>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <label for="event-date">Data de celebració</label>
+                    <input id="event-date" name="date" type="date" required />
+                </div>
+                <div>
+                    <label for="event-category">Categoria</label>
+                    <select id="event-category" name="category" required>
+                      <option value="">Selecciona una...</option>
+                      <option value="esports">eSports</option>
+                      <option value="launch">Llançament</option>
+                      <option value="conference">Convenció</option>
+                      <option value="retro">Retro</option>
+                    </select>
+                </div>
             </div>
 
             <div>
-              <label for="event-date">Data</label>
-              <input id="event-date" name="date" type="date" required aria-required="true" aria-describedby="event-date-help" />
-              <p id="event-date-help" class="helper-text">Data prevista de celebració.</p>
-            </div>
-
-            <div>
-              <label for="event-location">Localització</label>
-              <input id="event-location" name="location" type="text" required aria-required="true" aria-describedby="event-location-help" />
-              <p id="event-location-help" class="helper-text">Ciutat, recinte o enllaç de l'espai virtual.</p>
-            </div>
-
-            <div>
-              <label for="event-category">Categoria</label>
-              <select id="event-category" name="category" required aria-required="true" aria-describedby="event-category-help">
-                <option value="">Selecciona una categoria</option>
-                <option value="esports">eSports</option>
-                <option value="launch">Llançament</option>
-                <option value="conference">Convenció</option>
-                <option value="retro">Retro</option>
-                <option value="training">Formació</option>
-              </select>
-              <p id="event-category-help" class="helper-text">Escull la tipologia principal de l'activitat.</p>
+              <label for="event-location">Localització / Link</label>
+              <input id="event-location" name="location" type="text" required placeholder="Carrer, Ciutat o enllaç de Discord/Twitch" />
             </div>
           </fieldset>
 
           <fieldset>
-            <legend>Recursos multimèdia</legend>
+            <legend>Multimèdia i Vídeo</legend>
 
             <div>
-              <label for="event-image">Imatge de portada</label>
-              <input id="event-image" name="image" type="file" accept="image/*" aria-describedby="event-image-help" />
-              <p id="event-image-help" class="helper-text">Carrega una imatge amb bona qualitat i text alternatiu al publicar.</p>
+              <label for="event-image">Imatge de portada (Poster)</label>
+              <input id="event-image" name="image" type="file" accept="image/*" />
+              <p class="helper-text">Format recomanat: 16:9 (mínim 1280x720px).</p>
             </div>
 
             <div>
-              <label for="event-video">URL del vídeo promocional</label>
-              <input id="event-video" name="video_url" type="url" aria-describedby="event-video-help" placeholder="https://" />
-              <p id="event-video-help" class="helper-text">Afegeix un enllaç de YouTube, Vimeo o fitxer MP4.</p>
+              <label for="event-video">URL Vídeo Promocional (Opcional)</label>
+              <input id="event-video" name="video_url" type="url" placeholder="https://youtube.com/..." />
             </div>
           </fieldset>
 
-          <button type="submit">Publica esdeveniment</button>
+          <div class="submit-container">
+              <button type="submit" class="button btn-submit">Publica l'esdeveniment a l'agenda</button>
+              <p style="margin-top: 15px;"><a href="index.html" style="color: var(--text-muted); font-size: 0.9rem;">Cancel·lar i tornar</a></p>
+          </div>
         </form>
       </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 NeóArcade Events | Panell d'Administració</p>
+        </div>
+    </footer>
   </body>
 </html>
